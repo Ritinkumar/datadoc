@@ -171,6 +171,7 @@ const Filesrepo = ({ setAddRepoFlag }) => {
                     type='text'
                     className=' text-xl px-8 py-2 text-gray-700 border border-gray-50 m-8'
                     onClick={handleSubmit}
+                    size='large'
                 >
                     Add
                 </Button>

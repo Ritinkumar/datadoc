@@ -293,6 +293,7 @@ const Folderlist = () => {
                                         onMobile ? 'bottomLeft' : 'right'
                                     }
                                     arrow={true}
+                                    className='shadow-2xl'
                                 >
                                     <div className='ml-auto'>
                                         <Button

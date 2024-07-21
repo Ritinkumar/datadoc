@@ -114,7 +114,7 @@ const Sqlliterepo = ({ setAddRepoFlag }) => {
                         Drag and drop file here, or click to select file
                     </p>
                     <p className='ant-upload-hint'>
-                        Only .db file are allowed.
+                        Only .db or .sqlite file is allowed.
                     </p>
                 </Dragger>
 
@@ -140,6 +140,7 @@ const Sqlliterepo = ({ setAddRepoFlag }) => {
                     onClick={() => {
                         console.log('iiii');
                     }}
+                    size='large'
                 >
                     Add
                 </Button>

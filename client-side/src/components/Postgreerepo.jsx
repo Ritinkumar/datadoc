@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, InputNumber } from 'antd';
+import { Button, Form, Input, InputNumber, message } from 'antd';
 
 const layout = {
     labelCol: {
@@ -82,6 +82,10 @@ const Postgressrepo = () => {
                         type='text'
                         htmlType='submit'
                         className='text-xl text-gray-600 border border-gray-50'
+                        size='large'
+                        onClick={() => {
+                            message.warning('feature is under  development');
+                        }}
                     >
                         Submit
                     </Button>
