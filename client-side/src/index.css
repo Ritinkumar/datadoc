@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.purple-button {
+    background-color: #6b46c1; /* Purple color code */
+    color: #ffffff; /* Text color */
+    border-color: #6b46c1; /* Border color, if needed */
+}
+
+.purple-button:hover {
+    background-color: #805ad5; /* Darker shade of purple on hover */
+    border-color: #805ad5; /* Optional: Border color on hover */
+    color: #ffffff; /* Optional: Text color on hover */
+}

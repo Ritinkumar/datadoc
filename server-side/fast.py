@@ -1,4 +1,4 @@
-from fastapi import FastAPI, BackgroundTasks, Form, HTTPException,WebSocket, WebSocketDisconnect, Depends,Query,File, UploadFile
+from fastapi import FastAPI, BackgroundTasks, Form, HTTPException,WebSocket, WebSocketDisconnect, Depends,Query,File, UploadFile,Request
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from fastapi.responses import JSONResponse
 import os
@@ -14,6 +14,7 @@ from utils.regestration import create_jwt_token
 from pydantic import BaseModel
 import json
 import shutil
+import socket
 
 
 
@@ -391,3 +392,11 @@ async def get_pdf(filename: str):
         return FileResponse(file_path, media_type='application/pdf', filename="abc.pdf")
     else:
         raise HTTPException(status_code=404, detail="PDF not found")
+    
+
+
+@app.get("/get-ip")
+async def get_ip(request: Request):
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    return {"ip": ip_address}
