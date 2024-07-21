@@ -83,6 +83,18 @@ const Folderlist = () => {
     const [repoToView, setRepoToView] = useState(null);
     const [allFolderList, setAllFolderList] = useState(repoListTemp);
 
+    const [onMobile, setOnMobile] = useState(false);
+
+    useEffect(() => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            console.log('Mobile device');
+            setOnMobile(true);
+        } else {
+            console.log('Not a mobile device');
+        }
+    }, []);
+
     useEffect(() => {
         if (!webSocket) return;
 
@@ -277,8 +289,10 @@ const Folderlist = () => {
                                     menu={{
                                         items: repoActionItemCreation(repo),
                                     }}
-                                    placement='right'
-                                    arrow
+                                    placement={
+                                        onMobile ? 'bottomLeft' : 'right'
+                                    }
+                                    arrow={true}
                                 >
                                     <div className='ml-auto'>
                                         <Button

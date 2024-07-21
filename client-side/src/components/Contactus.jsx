@@ -38,6 +38,7 @@ const Contactus = () => {
                     <Input.TextArea
                         rows={6}
                         placeholder='Describe your issue here'
+                        size='large'
                     />
                 </Form.Item>
 
@@ -55,7 +56,7 @@ const Contactus = () => {
                 </Form.Item>
             </Form>
 
-            <p className='flex font-bold mt-16 text-gray-600'>
+            <p className='flex font-bold mt-12 text-gray-600'>
                 Contact us: +91-9999-111-449
             </p>
         </div>

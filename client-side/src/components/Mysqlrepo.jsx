@@ -44,48 +44,50 @@ const Mysqlrepo = () => {
     };
 
     return (
-        <Form
-            {...layout}
-            form={form} // Provide form instance to the Form component
-            name='nest-messages'
-            onFinish={onFinish}
-            style={{
-                maxWidth: 600,
-            }}
-            validateMessages={validateMessages}
-            onValuesChange={onDbParamChange} // Handle form field value changes
-        >
-            <Form.Item name={['user', 'username']} label='DB Username'>
-                <Input />
-            </Form.Item>
-            <Form.Item name={['user', 'password']} label='DB Password'>
-                <Input.Password />
-            </Form.Item>
-            <Form.Item name={['user', 'host']} label='DB Host'>
-                <Input />
-            </Form.Item>
-            <Form.Item name={['user', 'port']} label='DB Port'>
-                <InputNumber />
-            </Form.Item>
-            <Form.Item name={['user', 'database']} label='Database Name'>
-                <Input />
-            </Form.Item>
-
-            <Form.Item
-                wrapperCol={{
-                    ...layout.wrapperCol,
-                    offset: 8,
+        <div className='max-h-[60vh] flex overflow-y-auto overflow-x-hidden'>
+            <Form
+                {...layout}
+                form={form} // Provide form instance to the Form component
+                name='nest-messages'
+                onFinish={onFinish}
+                style={{
+                    maxWidth: 600,
                 }}
+                validateMessages={validateMessages}
+                onValuesChange={onDbParamChange} // Handle form field value changes
             >
-                <Button
-                    type='text'
-                    htmlType='submit'
-                    className='text-xl text-gray-600 border border-gray-50 '
+                <Form.Item name={['user', 'username']} label='DB Username'>
+                    <Input size='large' />
+                </Form.Item>
+                <Form.Item name={['user', 'password']} label='DB Password'>
+                    <Input.Password size='large' />
+                </Form.Item>
+                <Form.Item name={['user', 'host']} label='DB Host'>
+                    <Input size='large' />
+                </Form.Item>
+                <Form.Item name={['user', 'port']} label='DB Port'>
+                    <InputNumber size='large' />
+                </Form.Item>
+                <Form.Item name={['user', 'database']} label='Database Name'>
+                    <Input size='large' />
+                </Form.Item>
+
+                <Form.Item
+                    wrapperCol={{
+                        ...layout.wrapperCol,
+                        offset: 8,
+                    }}
                 >
-                    Submit
-                </Button>
-            </Form.Item>
-        </Form>
+                    <Button
+                        type='text'
+                        htmlType='submit'
+                        className='text-xl text-gray-600 border border-gray-50 '
+                    >
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
+        </div>
     );
 };
 
