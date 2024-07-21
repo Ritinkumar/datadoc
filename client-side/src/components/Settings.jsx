@@ -141,10 +141,11 @@ const Settings = ({ setSettingsFlag }) => {
                     <Dropdown.Button
                         className='flex items-start '
                         overlay={menu_chat_model}
-                        placement='bottom'
+                        placement={onMobile ? 'bottomLeft' : 'bottom'}
                         icon={
                             <DeploymentUnitOutlined className='text-gray-600' />
                         }
+                        arrow={true}
                     >
                         <p className='min-w-[250px]  flex text-bold text-gray-700  '>
                             {chatModel}
@@ -158,10 +159,11 @@ const Settings = ({ setSettingsFlag }) => {
                     <Dropdown.Button
                         className='flex items-start '
                         overlay={menu_embedding_model}
-                        placement='bottom'
+                        placement={onMobile ? 'bottomLeft' : 'bottom'}
                         icon={
                             <DeploymentUnitOutlined className='text-gray-600' />
                         }
+                        arrow={true}
                     >
                         <p className='min-w-[250px]   flex text-bold text-gray-700  '>
                             {embeddingModel}
