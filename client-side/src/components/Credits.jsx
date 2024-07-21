@@ -431,6 +431,7 @@ const Credits = ({ setCreditsFlag }) => {
                     title='back'
                     onClick={() => setCreditsFlag(false)}
                 />
+                <></>
 
                 <div className={` w-full  ${onMobile ? 'px-4' : ''} `}>
                     <Wallet />
