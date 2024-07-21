@@ -61,14 +61,14 @@ const Addrepositorymain = ({ setAddRepoFlag }) => {
         }
     }, []);
     return (
-        <div className='fixed inset-0 z-10 bg-black bg-opacity-30 w-full h-full '>
+        <div className='fixed inset-0 z-10 bg-black bg-opacity-30 w-full min-h-full '>
             <div
                 className={`fixed ${
                     onMobile
                         ? 'w-[90%] px-4 pt-16 pb-8'
                         : 'w-[75%] px-8 pt-16 pb-8'
                 } h-fit bg-white rounded-xl max-w-lg max-h-[90%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-50 
-                 `}
+            `}
             >
                 <FontAwesomeIcon
                     icon={faDeleteLeft}
@@ -84,7 +84,7 @@ const Addrepositorymain = ({ setAddRepoFlag }) => {
                     renderTabBar={renderTabBar}
                     items={items}
                     size='small'
-                    className='flex  rounded-xl px-2 text-gray-600   '
+                    className='flex  rounded-xl px-2 text-gray-600 pt-2   '
                     tabBarGutter={30}
                     tabBarStyle={{ color: '#fc03e3' }}
                 />

@@ -133,6 +133,10 @@ const Filesrepo = ({ setAddRepoFlag }) => {
                     prefix={<FolderOutlined className='text-gray-500 ' />}
                     type='text'
                     onChange={(e) => setFolderName(e.target.value)}
+                    // style={{
+                    //     fontSize: '16px',
+                    // }}
+                    size='large'
                 />
 
                 <Dragger {...draggerProps} className='m-4 '>

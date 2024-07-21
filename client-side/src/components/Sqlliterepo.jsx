@@ -103,6 +103,7 @@ const Sqlliterepo = ({ setAddRepoFlag }) => {
                     prefix={<FolderOutlined className='text-gray-500 ' />}
                     type='text'
                     onChange={(e) => setFolderName(e.target.value)}
+                    size='large'
                 />
 
                 <Dragger {...draggerProps} className='m-4 '>

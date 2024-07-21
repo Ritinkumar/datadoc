@@ -44,7 +44,7 @@ const Postgressrepo = () => {
     };
 
     return (
-        <div>
+        <div className='max-h-[60vh] flex overflow-y-auto overflow-x-hidden'>
             <Form
                 {...layout}
                 form={form} // Provide form instance to the Form component
@@ -57,19 +57,19 @@ const Postgressrepo = () => {
                 onValuesChange={onDbParamChange} // Handle form field value changes
             >
                 <Form.Item name={['user', 'username']} label='DB Username'>
-                    <Input />
+                    <Input size='large' />
                 </Form.Item>
                 <Form.Item name={['user', 'password']} label='DB Password'>
-                    <Input.Password />
+                    <Input.Password size='large' />
                 </Form.Item>
                 <Form.Item name={['user', 'host']} label='DB Host'>
-                    <Input />
+                    <Input size='large' />
                 </Form.Item>
                 <Form.Item name={['user', 'port']} label='DB Port'>
-                    <InputNumber />
+                    <InputNumber size='large' />
                 </Form.Item>
                 <Form.Item name={['user', 'database']} label='Database Name'>
-                    <Input />
+                    <Input size='large' />
                 </Form.Item>
 
                 <Form.Item

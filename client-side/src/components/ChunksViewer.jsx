@@ -121,7 +121,10 @@ const Chunksviewer = () => {
         <div>
             <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
                 {pdfFile && (
-                    <div className='rounded-xl' style={{ height: '750px' }}>
+                    <div
+                        className='rounded-xl'
+                        style={{ height: '750px', fontSize: '16px' }}
+                    >
                         <Viewer
                             fileUrl={pdfFile}
                             plugins={[newPlugin]}

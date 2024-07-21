@@ -65,7 +65,7 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
             <div
                 className={`fixed ${
                     onMobile ? 'w-full' : 'w-[75%] px-8'
-                } pt-16 pb-8  h-fit bg-gray-100 rounded-xl  max-h-[90%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-100  overflow-auto`}
+                } pt-16 pb-8  h-fit bg-gray-100 rounded-xl  max-h-[90%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-100  `}
             >
                 <FontAwesomeIcon
                     icon={faDeleteLeft}
@@ -78,7 +78,10 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
 
                 <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
                     {pdfFile && (
-                        <div className='rounded-xl' style={{ height: '700px' }}>
+                        <div
+                            className='rounded-xl'
+                            style={{ height: '700px', fontSize: '16px' }}
+                        >
                             <Viewer fileUrl={pdfFile} plugins={[newPlugin]} />
                         </div>
                     )}

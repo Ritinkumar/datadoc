@@ -18,11 +18,12 @@ const Main = () => {
     const { isSmallScreen, isSmallScreenExtraSmall } = useGlobalState();
     const { setIsSmallScreen, setIsSmallScreenExtraSmall } =
         useGlobalDispatch();
-
+    const [onMobile, setOnMobile] = useState(false);
     useEffect(() => {
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) {
             console.log('Mobile device');
+            setOnMobile(true);
             setCollapsed(true);
         } else {
             console.log('Not a mobile device');
@@ -92,7 +93,11 @@ const Main = () => {
             </Layout>
 
             <FloatButton
-                className='fixed bottom-48 right-4  '
+                className={
+                    onMobile
+                        ? 'fixed bottom-16 right-4  '
+                        : 'fixed bottom-48 right-4  '
+                }
                 icon={
                     true ? (
                         <BellOutlined className='text-gray-600' />

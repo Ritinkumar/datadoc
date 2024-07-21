@@ -203,6 +203,15 @@ const Credits = ({ setCreditsFlag }) => {
     const [searchedColumn, setSearchedColumn] = useState('');
     const [expandedRowKeys, setExpandedRowKeys] = useState([]);
 
+    useEffect(() => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            console.log('Mobile device');
+            setOnMobile(true);
+        } else {
+            console.log('Not a mobile device');
+        }
+    }, []);
     const searchInput = useRef(null);
 
     const handleSearch = (selectedKeys, confirm, dataIndex) => {
@@ -224,7 +233,11 @@ const Credits = ({ setCreditsFlag }) => {
             clearFilters,
             close,
         }) => (
-            <div style={{ padding: 8 }} onKeyDown={(e) => e.stopPropagation()}>
+            <div
+                className='shadow-2xl'
+                style={{ padding: 8 }}
+                onKeyDown={(e) => e.stopPropagation()}
+            >
                 <Input
                     ref={searchInput}
                     placeholder={`Search ${dataIndex}`}
@@ -236,6 +249,7 @@ const Credits = ({ setCreditsFlag }) => {
                         handleSearch(selectedKeys, confirm, dataIndex)
                     }
                     style={{ marginBottom: 8, display: 'block' }}
+                    size='large'
                 />
                 <Space>
                     <Button
@@ -250,15 +264,15 @@ const Credits = ({ setCreditsFlag }) => {
                         Search
                     </Button>
                     <Button
-                        onClick={() =>
-                            clearFilters && handleReset(clearFilters)
-                        }
+                        onClick={() => {
+                            clearFilters && handleReset(clearFilters);
+                            handleSearch(selectedKeys, confirm, dataIndex);
+                        }}
                         size='small'
-                        style={{ width: 90 }}
                     >
                         Reset
                     </Button>
-                    <Button
+                    {/* <Button
                         type='link'
                         size='small'
                         onClick={() => {
@@ -268,8 +282,13 @@ const Credits = ({ setCreditsFlag }) => {
                         }}
                     >
                         Filter
-                    </Button>
-                    <Button type='link' size='small' onClick={() => close()}>
+                    </Button> */}
+                    <Button
+                        type='text'
+                        className='text-red-500 '
+                        size='small'
+                        onClick={() => close()}
+                    >
                         Close
                     </Button>
                 </Space>
