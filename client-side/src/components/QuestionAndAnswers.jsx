@@ -58,7 +58,17 @@ const QuestionAndAnswers = () => {
     const { selectedRepo, selectedFile, webSocket } = useGlobalState();
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const [dummyData, setDummyData] = useState(dummyData_initial);
+    const [onMobile, setOnMobile] = useState(false);
 
+    useEffect(() => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            console.log('Mobile device');
+            setOnMobile(true);
+        } else {
+            console.log('Not a mobile device');
+        }
+    }, []);
     useEffect(() => {
         // Scroll to the bottom of the div when component mounts
         if (messagesEndRef.current) {
@@ -126,6 +136,11 @@ const QuestionAndAnswers = () => {
                                                     ? item.filename
                                                     : item.foldername
                                             }
+                                            placement={
+                                                onMobile
+                                                    ? 'bottomRight'
+                                                    : 'topRight'
+                                            }
                                         >
                                             {item.filename ? (
                                                 <FileOutlined className='text-[#645e5e] text-lg' />
@@ -178,9 +193,10 @@ const QuestionAndAnswers = () => {
                             <Tooltip
                                 title={
                                     selectedFile
-                                        ? `Ask Questions to ${selectedFile} from ${selectedRepo.foldername} `
+                                        ? `Ask Questions to ${selectedFile.filename} from ${selectedRepo.foldername} `
                                         : `Ask Questions to  ${selectedRepo.foldername} `
                                 }
+                                placement={'topRight'}
                             >
                                 <InfoCircleOutlined className='text-[#645e5e]' />
                             </Tooltip>
