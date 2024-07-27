@@ -110,7 +110,7 @@ const Faq = () => {
     return (
         <div className='w-full h-[580px] max-h-[580px] max-h-[70vh] overflow-auto bg-white flex max-w-lg py-4'>
             <Collapse
-                className='w-full h-fit text-justify '
+                className='w-full h-fit text-justify rounded-sm '
                 defaultActiveKey={['1']}
                 expandIconPosition={expandIconPosition}
                 onChange={onChange}

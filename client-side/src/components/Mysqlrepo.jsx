@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form, Input, InputNumber, message } from 'antd';
 import colors from './color';
 const layout = {
@@ -30,6 +30,17 @@ const Mysqlrepo = () => {
         port: '',
         database: '',
     });
+    const [onMobile, setOnMobile] = useState(false);
+
+    useEffect(() => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            console.log('Mobile device');
+            setOnMobile(true);
+        } else {
+            console.log('Not a mobile device');
+        }
+    }, []);
 
     const onFinish = (values) => {
         console.log('Form values:', values);
@@ -75,13 +86,17 @@ const Mysqlrepo = () => {
                 <Form.Item
                     wrapperCol={{
                         ...layout.wrapperCol,
-                        offset: 8,
+                        offset: onMobile ? 0 : 8,
                     }}
                 >
                     <Button
                         type='text'
                         htmlType='submit'
-                        className={`text-xl  border border-gray-200 w-[90%] bg-${colors.primary} text-white`}
+                        className={
+                            onMobile
+                                ? `text-xl  border border-gray-200  w-full  bg-${colors.primary} text-white px-8 `
+                                : `text-xl  border border-gray-200 w-full  bg-${colors.primary} text-white`
+                        }
                         size='large'
                         onClick={() => {
                             message.warning('feature is under  development');
