@@ -61,7 +61,7 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
     }, []);
 
     return (
-        <div className='fixed inset-0 z-10 bg-black bg-opacity-30 w-full h-full min-h-[700px] overflow-auto'>
+        <div className='fixed inset-0 z-10 bg-black bg-opacity-50 w-full h-full min-h-[700px] overflow-auto'>
             <div
                 className={`fixed ${
                     onMobile ? 'w-full' : 'w-[75%] px-8'

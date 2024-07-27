@@ -133,7 +133,7 @@ const Chunksviewer = () => {
                     </div>
                 )}
             </Worker>
-            <div className='bg-gray-300 border-t-0  border border-gray-400'>
+            <div className='bg-[#eeefef] border-t-0  border border-gray-400'>
                 <ButtonsDisplay />
             </div>
         </div>

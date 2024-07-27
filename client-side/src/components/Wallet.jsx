@@ -21,14 +21,14 @@ const BalanceCard = () => (
                 type='text'
                 shape='round'
                 size='large'
-                className='font-semibold bg-white   text-gray-600'
+                className='font-semibold font-serif bg-white   text-gray-600'
             >
                 Top Up
             </Button>
             <Button
                 type='text'
                 shape='round'
-                className='font-semibold bg-white   text-gray-600 ml-4'
+                className='font-semibold font-serif bg-white   text-gray-600 ml-4'
             >
                 <FontAwesomeIcon icon={faShare}></FontAwesomeIcon>
             </Button>

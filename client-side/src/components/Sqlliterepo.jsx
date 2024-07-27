@@ -8,6 +8,7 @@ import {
     FileOutlined,
     DeleteOutlined,
 } from '@ant-design/icons';
+import colors from './color';
 import { Button, Upload, message } from 'antd';
 
 const { Dragger } = Upload;
@@ -136,7 +137,7 @@ const Sqlliterepo = ({ setAddRepoFlag }) => {
 
                 <Button
                     type='text'
-                    className=' text-xl px-8 py-2 text-gray-700 border border-gray-50 m-8'
+                    className={`text-xl  border border-gray-200 w-[90%] my-4 bg-${colors.primary} text-white`}
                     onClick={() => {
                         console.log('iiii');
                     }}

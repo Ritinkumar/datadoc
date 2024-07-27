@@ -44,7 +44,7 @@ const Maincontent = () => {
     };
 
     return (
-        <div className='w-full h-full border bg-white px-2 relative'>
+        <div className='w-full h-full border border-white bg-white px-2 relative'>
             {showBoth && (
                 <ConfigProvider
                     theme={{

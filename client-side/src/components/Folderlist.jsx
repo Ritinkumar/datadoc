@@ -231,7 +231,7 @@ const Folderlist = () => {
                             className='w-full'
                         >
                             <div
-                                className={`w-full flex items-center rounded-xl font-semibold  ${
+                                className={`w-full flex items-center rounded-xl font-semibold font-serif  ${
                                     selectedRepo.folder_id === repo.folder_id
                                         ? 'bg-[#645e5e] text-white'
                                         : 'text-gray-600'

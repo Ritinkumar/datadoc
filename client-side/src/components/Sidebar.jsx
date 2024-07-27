@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../media/logo.png';
 import { Button } from 'antd';
-import { FolderAddOutlined } from '@ant-design/icons';
+import { FolderAddFilled, FolderAddOutlined } from '@ant-design/icons';
 
 import Folderlist from './Folderlist';
 import Addrepositorymain from './Addrepositorymain';
@@ -10,7 +10,7 @@ const Sidebar = ({ collapsed }) => {
     const [addRepoFlag, setAddRepoFlag] = useState(false);
 
     return (
-        <div className='border-r border-[#645e5e] bg-white w-full h-full '>
+        <div className='border-r border-gray-700  bg-white w-full h-full '>
             {addRepoFlag && (
                 <Addrepositorymain
                     setAddRepoFlag={setAddRepoFlag}
@@ -27,15 +27,17 @@ const Sidebar = ({ collapsed }) => {
                 />
 
                 <Button
-                    className='text-xl  font-semi-bold text-[#645e5e]  w-full '
+                    className='text-xl font-semibold   text-gray-600   w-full '
                     type='text'
+                    size='large'
                     onClick={() => {
                         setAddRepoFlag(true);
                     }}
                 >
                     <div className='flex  '>
-                        <FolderAddOutlined />
-                        <p className='ml-4 font-semibold '>New Folder</p>
+                        {/* <FolderAddOutlined /> */}
+                        <FolderAddFilled />
+                        <p className='ml-4  font-serif '>New Folder</p>
                     </div>
                 </Button>
                 <div className='relative mt-8 w-full h-[60%] flex-grow max-h-[70%]'>

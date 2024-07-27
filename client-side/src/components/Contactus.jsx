@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, Input, message } from 'antd';
-
+import colors from './color';
 const Contactus = () => {
     const [form] = Form.useForm();
 
@@ -44,11 +44,11 @@ const Contactus = () => {
 
                 <Form.Item
                     wrapperCol={{ offset: 0 }}
-                    className='flex items-center justify-center'
+                    className='flex items-center justify-center  '
                 >
                     <Button
                         type='text'
-                        className='text-xl px-8 py-2 text-gray-700 border border-gray-200'
+                        className={`text-xl  border border-gray-200 w-full bg-${colors.primary} text-white`}
                         htmlType='submit'
                     >
                         Submit

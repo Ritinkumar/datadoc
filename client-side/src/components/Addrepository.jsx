@@ -123,7 +123,7 @@ const Addrepository = ({ setAddRepoFlag }) => {
     };
 
     return (
-        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-30 w-full h-full '>
+        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 w-full h-full '>
             <div
                 className={`fixed ${
                     isSmallScreenExtraSmall

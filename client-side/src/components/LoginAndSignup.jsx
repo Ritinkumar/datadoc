@@ -7,9 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Input from 'antd/es/input/Input';
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import logo from '../media/logo.png';
+import background from '../media/background.jpg';
 import Alert from 'antd/es/alert/Alert';
 import axios from 'axios';
 import { getIpAddress } from './NetworkUtils';
+import colors from './color';
 
 const LoginAndSignup = () => {
     const { setIsUserLoggedIn } = useGlobalDispatch();
@@ -113,7 +115,14 @@ const LoginAndSignup = () => {
     };
 
     return (
-        <div className='fixed flex  w-full h-full '>
+        <div
+            className='fixed flex w-full h-full '
+            style={{
+                backgroundImage: `url(${background})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
             {error && (
                 <Alert
                     message='Error'
@@ -126,156 +135,144 @@ const LoginAndSignup = () => {
                 />
             )}
 
-            <Watermark
-                gap={[20, 20]}
-                content={['Data doc', 'lets talk to your data']}
-            >
-                <div
-                    style={{
-                        height: 2000,
-                        width: 2000,
-                    }}
-                >
-                    <div className='fixed z-10 flex items-center justify-center w-full h-full'>
-                        <div className='fixed w-[70%] h-fit max-w-sm flex flex-col bg-white items-center justify-center rounded-xl border border-gray-300'>
-                            <img
-                                src={logo}
-                                alt='Logo'
-                                className={`w-3/5 max-w-xs  mt-12 m-4`}
-                            />
-                            {!verifyOtp ? (
-                                <>
-                                    {isSignUp && (
-                                        <Input
-                                            size='large'
-                                            placeholder='Username'
-                                            className='w-[90%] border-gray-200 m-4 '
-                                            prefix={<UserOutlined />}
-                                            type='text'
-                                            onChange={(e) => {
-                                                setUsername(e.target.value);
-                                            }}
-                                            onKeyPress={handleKeyPress}
-                                        />
-                                    )}
-                                    <Input
-                                        size='large'
-                                        placeholder='Email'
-                                        className='w-[90%] border-gray-200 m-4 bg-white'
-                                        prefix={<MailOutlined />}
-                                        type='text'
-                                        onChange={(e) => {
-                                            setEmail(e.target.value);
-                                        }}
-                                        onKeyPress={handleKeyPress}
-                                    />
-                                    <Input.Password
-                                        size='large'
-                                        className='w-[90%] border-gray-200 m-4'
-                                        placeholder='Password'
-                                        prefix={<LockOutlined />}
-                                        onChange={(e) => {
-                                            setPassword(e.target.value);
-                                        }}
-                                        onKeyPress={handleKeyPress}
-                                    />
-
-                                    {isSignUp && (
-                                        <Input.Password
-                                            size='large'
-                                            placeholder='Confirm Password'
-                                            className='w-[90%] border-gray-200 m-4 '
-                                            prefix={<LockOutlined />}
-                                            onChange={(e) => {
-                                                setConfirmPassword(
-                                                    e.target.value
-                                                );
-                                            }}
-                                            onKeyPress={handleKeyPress}
-                                        />
-                                    )}
-
-                                    {isSignUp ? (
-                                        <Button
-                                            type='text'
-                                            className=' text-2xl px-8 py-2 text-gray-700 border border-gray-200 m-4'
-                                            onClick={handleSignUp}
-                                        >
-                                            Sign up
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            type='text'
-                                            className=' text-2xl px-8 py-2 text-gray-700 border border-gray-200 m-4'
-                                            onClick={handleLogin}
-                                        >
-                                            Login
-                                        </Button>
-                                    )}
-
-                                    <p className='text-gray-700 mt-2 mb-4 '>
-                                        {isSignUp
-                                            ? ' Already have an account ? '
-                                            : "Don't have an account ? "}
-                                        <span
-                                            className={`cursor-pointer text-blue-500`}
-                                            onClick={() => {
-                                                setIsSignUp(!isSignUp);
-                                            }}
-                                        >
-                                            {isSignUp ? 'Login' : 'Sign up'}
-                                        </span>
-                                    </p>
-                                </>
-                            ) : (
-                                <div className='flex flex-col items-center justify-center'>
-                                    <Input
-                                        size='large'
-                                        className='w-[90%] border-gray-200 m-4'
-                                        placeholder='Enter Otp '
-                                        prefix={<LockOutlined />}
-                                        type='text'
-                                        onChange={(e) => {
-                                            setOtp(e.target.value);
-                                        }}
-                                        onKeyPress={handleKeyPress}
-                                    />
-
-                                    <Button
-                                        type='text'
-                                        className=' text-xl px-8 py-2 text-gray-700 border border-gray-200 m-4'
-                                        onClick={handleOtpVerification}
-                                    >
-                                        Verify Otp
-                                    </Button>
-
-                                    <p className='text-gray-400  '>{email}</p>
-
-                                    <p className='text-gray-700 mt-2 mb-4 '>
-                                        <span
-                                            className={`cursor-pointer text-blue-500  `}
-                                            onClick={() => {
-                                                handleSignUp();
-                                            }}
-                                        >
-                                            Resend
-                                        </span>
-                                        <span> Or</span>
-                                        <span
-                                            className={`cursor-pointer text-blue-500 ml-2 `}
-                                            onClick={() => {
-                                                setVerifyOtp(false);
-                                            }}
-                                        >
-                                            Sign up
-                                        </span>
-                                    </p>
-                                </div>
+            <div className='fixed z-10 flex items-center justify-center w-full h-full bg-white bg-opacity-50 '>
+                <div className='fixed w-[70%] h-fit max-w-sm flex flex-col bg-white items-center justify-center rounded-xl border border-gray-300'>
+                    <img
+                        src={logo}
+                        alt='Logo'
+                        className={`w-3/5 max-w-xs  mt-12 m-4`}
+                    />
+                    {!verifyOtp ? (
+                        <>
+                            {isSignUp && (
+                                <Input
+                                    size='large'
+                                    placeholder='Username'
+                                    className='w-[90%] border-gray-200 m-4 '
+                                    prefix={<UserOutlined />}
+                                    type='text'
+                                    onChange={(e) => {
+                                        setUsername(e.target.value);
+                                    }}
+                                    onKeyPress={handleKeyPress}
+                                />
                             )}
+                            <Input
+                                size='large'
+                                placeholder='Email'
+                                className='w-[90%] border-gray-200 m-4 bg-white'
+                                prefix={<MailOutlined />}
+                                type='text'
+                                onChange={(e) => {
+                                    setEmail(e.target.value);
+                                }}
+                                onKeyPress={handleKeyPress}
+                            />
+                            <Input.Password
+                                size='large'
+                                className='w-[90%] border-gray-200 m-4'
+                                placeholder='Password'
+                                prefix={<LockOutlined />}
+                                onChange={(e) => {
+                                    setPassword(e.target.value);
+                                }}
+                                onKeyPress={handleKeyPress}
+                            />
+
+                            {isSignUp && (
+                                <Input.Password
+                                    size='large'
+                                    placeholder='Confirm Password'
+                                    className='w-[90%] border-gray-200 m-4 '
+                                    prefix={<LockOutlined />}
+                                    onChange={(e) => {
+                                        setConfirmPassword(e.target.value);
+                                    }}
+                                    onKeyPress={handleKeyPress}
+                                />
+                            )}
+
+                            {isSignUp ? (
+                                <Button
+                                    type='text'
+                                    size='large'
+                                    className={`text-xl  border border-gray-200 w-[90%] my-4 bg-${colors.primary} text-white`}
+                                    onClick={handleSignUp}
+                                >
+                                    Sign up
+                                </Button>
+                            ) : (
+                                <Button
+                                    type='text'
+                                    size='large'
+                                    className={`text-xl  border border-gray-200 w-[90%] my-4 bg-${colors.primary} text-white`}
+                                    onClick={handleLogin}
+                                >
+                                    Log In
+                                </Button>
+                            )}
+
+                            <p className='text-gray-700 mt-2 mb-4 '>
+                                {isSignUp
+                                    ? ' Already have an account ? '
+                                    : "Don't have an account ? "}
+                                <span
+                                    className={`cursor-pointer text-blue-500`}
+                                    onClick={() => {
+                                        setIsSignUp(!isSignUp);
+                                    }}
+                                >
+                                    {isSignUp ? 'Log In' : 'Sign up'}
+                                </span>
+                            </p>
+                        </>
+                    ) : (
+                        <div className='flex flex-col items-center justify-center'>
+                            <Input
+                                size='large'
+                                className='w-[90%] border-gray-200 m-4'
+                                placeholder='Enter Otp '
+                                prefix={<LockOutlined />}
+                                type='text'
+                                onChange={(e) => {
+                                    setOtp(e.target.value);
+                                }}
+                                onKeyPress={handleKeyPress}
+                            />
+
+                            <Button
+                                type='text'
+                                className=' text-xl px-8 py-2 text-gray-700 border border-gray-200 m-4'
+                                onClick={handleOtpVerification}
+                            >
+                                Verify Otp
+                            </Button>
+
+                            <p className='text-gray-400  '>{email}</p>
+
+                            <p className='text-gray-700 mt-2 mb-4 '>
+                                <span
+                                    className={`cursor-pointer text-blue-500  `}
+                                    onClick={() => {
+                                        handleSignUp();
+                                    }}
+                                >
+                                    Resend
+                                </span>
+                                <span> Or</span>
+                                <span
+                                    className={`cursor-pointer text-blue-500 ml-2 `}
+                                    onClick={() => {
+                                        setVerifyOtp(false);
+                                    }}
+                                >
+                                    Sign up
+                                </span>
+                            </p>
                         </div>
-                    </div>
+                    )}
                 </div>
-            </Watermark>
+            </div>
         </div>
     );
 };

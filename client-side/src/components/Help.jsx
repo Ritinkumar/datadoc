@@ -45,7 +45,7 @@ const Help = ({ setHelpFlag }) => {
     );
 
     return (
-        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-30 w-full h-full '>
+        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 w-full h-full '>
             <div
                 className={`fixed w-[95%] z-10 ${
                     onMobile ? 'h-[90%] px-4' : 'h-[80%] px-8 '

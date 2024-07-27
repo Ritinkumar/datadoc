@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, InputNumber, message } from 'antd';
-
+import colors from './color';
 const layout = {
     labelCol: {
         span: 8,
@@ -44,7 +44,7 @@ const Mysqlrepo = () => {
     };
 
     return (
-        <div className='max-h-[60vh] flex overflow-y-auto overflow-x-hidden'>
+        <div className='max-h-[60vh] font-normal flex overflow-y-auto overflow-x-hidden'>
             <Form
                 {...layout}
                 form={form} // Provide form instance to the Form component
@@ -68,7 +68,7 @@ const Mysqlrepo = () => {
                 <Form.Item name={['user', 'port']} label='DB Port'>
                     <InputNumber size='large' />
                 </Form.Item>
-                <Form.Item name={['user', 'database']} label='Database Name'>
+                <Form.Item name={['user', 'database']} label='DB Name'>
                     <Input size='large' />
                 </Form.Item>
 
@@ -81,7 +81,7 @@ const Mysqlrepo = () => {
                     <Button
                         type='text'
                         htmlType='submit'
-                        className='text-xl text-gray-600 border border-gray-50 '
+                        className={`text-xl  border border-gray-200 w-[90%] bg-${colors.primary} text-white`}
                         size='large'
                         onClick={() => {
                             message.warning('feature is under  development');

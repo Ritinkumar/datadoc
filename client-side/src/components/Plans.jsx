@@ -3,7 +3,7 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card, message, Space } from 'antd';
 import { BankOutlined, CrownOutlined, ExportOutlined } from '@ant-design/icons';
-
+import colors from './color';
 const Plans = ({ setPlansFlag }) => {
     const [onMobile, setOnMobile] = useState(false);
 
@@ -17,7 +17,7 @@ const Plans = ({ setPlansFlag }) => {
         }
     }, []);
     return (
-        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-30 w-full h-full '>
+        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 w-full h-full '>
             <div
                 className={`fixed w-[95%] z-10 ${
                     onMobile ? 'h-[90%]' : 'h-[80%]'
@@ -38,7 +38,7 @@ const Plans = ({ setPlansFlag }) => {
                             title={
                                 <div className='flex'>
                                     <CrownOutlined className='text-gray-600 text-lg mr-4 ' />
-                                    <p className='text-gray-600'>
+                                    <p className='text-gray-600 font-serif'>
                                         Premium Plan
                                     </p>
                                 </div>
@@ -51,10 +51,12 @@ const Plans = ({ setPlansFlag }) => {
                             }}
                             hoverable={true}
                         >
-                            <p className='text-base font-bold text-gray-400 '>
+                            <p className='text-base font-bold font-serif text-gray-400 '>
                                 Monthly
                             </p>
-                            <p className='text-lg font-semibold'>$49/month</p>
+                            <p className='text-lg font-semibold font-serif'>
+                                $49/month
+                            </p>
 
                             <ul className='list-disc pl-5 ml-4  mb-8'>
                                 <li>10% off on all credit buys</li>
@@ -64,7 +66,7 @@ const Plans = ({ setPlansFlag }) => {
 
                             <Button
                                 type='text'
-                                className=' text-lg px-8 text-gray-700 border border-gray-200 rounded-full w-full bg-gray-50  shadow-xl '
+                                className={`text-xl  border border-gray-200 w-full   bg-${colors.primary} text-white`}
                                 onClick={() => {
                                     message.warning(
                                         'premium feature not available right now'
@@ -83,7 +85,7 @@ const Plans = ({ setPlansFlag }) => {
                                 <div className='flex'>
                                     <BankOutlined className='text-gray-600 text-lg mr-4 '></BankOutlined>
 
-                                    <p className='text-gray-600'>
+                                    <p className='text-gray-600 font-serif '>
                                         Enterprise Plan
                                     </p>
                                 </div>
@@ -99,7 +101,9 @@ const Plans = ({ setPlansFlag }) => {
                             <p className='text-base font-bold text-gray-400 '>
                                 Monthly
                             </p>
-                            <p className='text-lg font-semibold'>$199/month</p>
+                            <p className='text-lg font-semibold font-serif'>
+                                $199/month
+                            </p>
 
                             <ul className='list-disc pl-5 ml-4  mb-8'>
                                 <li>15% off on all credit buys</li>
@@ -109,7 +113,7 @@ const Plans = ({ setPlansFlag }) => {
 
                             <Button
                                 type='text'
-                                className=' text-lg px-8 text-gray-700 border border-gray-200 rounded-full w-full bg-gray-50  shadow-xl '
+                                className={`text-xl  border border-gray-200 w-full   bg-${colors.primary} text-white`}
                                 onClick={() => {
                                     message.warning(
                                         'premium feature not available right now'

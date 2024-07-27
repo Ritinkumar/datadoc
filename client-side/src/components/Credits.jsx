@@ -399,7 +399,7 @@ const Credits = ({ setCreditsFlag }) => {
             ...getColumnSearchProps('reponame'),
             render: (_, record) => (
                 <div>
-                    <p className='font-semibold text-gray-800'>
+                    <p className='font-semibold font-serif text-gray-800'>
                         {record.reponame || '-----'}
                     </p>
                     <p className='text-gray-600'>{record.timestamp}</p>
@@ -415,7 +415,7 @@ const Credits = ({ setCreditsFlag }) => {
             sortDirections: ['descend', 'ascend'],
             render: (credits) => (
                 <span
-                    className='flex w-full font-semibold items-center justify-center'
+                    className='flex w-full font-semibold font-serif items-center justify-center'
                     style={{ color: credits < 0 ? 'red' : 'green' }}
                 >
                     {credits}
@@ -436,7 +436,7 @@ const Credits = ({ setCreditsFlag }) => {
     const handleTableChange = (filters, sorter) => {};
 
     return (
-        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-30 w-full h-full '>
+        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 w-full h-full '>
             <div
                 className={`fixed z-10 ${
                     onMobile

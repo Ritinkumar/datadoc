@@ -11,7 +11,7 @@ import {
 import { Button, Upload, message } from 'antd';
 import axios from 'axios';
 import { getIpAddress } from './NetworkUtils';
-
+import colors from './color';
 const { Dragger } = Upload;
 
 const Filesrepo = ({ setAddRepoFlag }) => {
@@ -169,7 +169,7 @@ const Filesrepo = ({ setAddRepoFlag }) => {
 
                 <Button
                     type='text'
-                    className=' text-xl px-8 py-2 text-gray-700 border border-gray-50 m-8'
+                    className={`text-xl  border border-gray-200 w-[90%] my-4 bg-${colors.primary} text-white`}
                     onClick={handleSubmit}
                     size='large'
                 >

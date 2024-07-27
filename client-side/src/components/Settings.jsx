@@ -12,7 +12,7 @@ import {
     Space,
 } from 'antd';
 import React, { useEffect, useState } from 'react';
-
+import colors from './color';
 const Settings = ({ setSettingsFlag }) => {
     const [temperatureValue, setTemperatureValue] = useState(50);
     const [referenceCount, setReferenceCount] = useState(3);
@@ -120,7 +120,7 @@ const Settings = ({ setSettingsFlag }) => {
     );
 
     return (
-        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-30 w-full h-full '>
+        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 w-full h-full '>
             <div
                 className={`fixed w-[95%] z-10 ${
                     onMobile ? 'h-[90%]' : 'h-[80%] px-8 '
@@ -253,11 +253,10 @@ const Settings = ({ setSettingsFlag }) => {
 
                 <Button
                     type='text'
-                    className={
-                        onMobile
-                            ? ' text-xl px-8 py-2 text-gray-700 border border-gray-200  '
-                            : ' text-xl px-8 py-2 text-gray-700 border border-gray-200 m-4 '
-                    }
+                    size='large'
+                    className={`text-xl  border border-gray-200    bg-${
+                        colors.primary
+                    } text-white  ${onMobile ? 'w-[90%]' : 'my-4 w-full'}`}
                     onClick={() => {
                         message.success('New changes have been applied ');
                     }}

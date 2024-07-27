@@ -8,6 +8,7 @@ import Filesrepo from './Filesrepo';
 import Sqlliterepo from './Sqlliterepo';
 import Postgressrepo from './Postgreerepo';
 import Mysqlrepo from './Mysqlrepo';
+import colors from './color';
 
 const Addrepositorymain = ({ setAddRepoFlag }) => {
     const items = [
@@ -31,7 +32,7 @@ const Addrepositorymain = ({ setAddRepoFlag }) => {
             ),
         },
         {
-            label: `MYsql`,
+            label: `MySQL`,
             key: 4,
             children: <Mysqlrepo setAddRepoFlag={setAddRepoFlag} />,
         },
@@ -61,7 +62,7 @@ const Addrepositorymain = ({ setAddRepoFlag }) => {
         }
     }, []);
     return (
-        <div className='fixed inset-0 z-10 bg-black bg-opacity-30 w-full min-h-full '>
+        <div className='fixed inset-0 z-10 bg-black bg-opacity-50 w-full min-h-full '>
             <div
                 className={`fixed ${
                     onMobile
@@ -84,9 +85,8 @@ const Addrepositorymain = ({ setAddRepoFlag }) => {
                     renderTabBar={renderTabBar}
                     items={items}
                     size='small'
-                    className='flex  rounded-xl px-2 text-gray-600 pt-2   '
+                    className='flex   text-xl font-serif  rounded-xl px-2   pt-2 '
                     tabBarGutter={30}
-                    tabBarStyle={{ color: '#fc03e3' }}
                 />
             </div>
         </div>

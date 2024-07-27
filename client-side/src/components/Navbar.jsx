@@ -91,7 +91,7 @@ const Navbar = () => {
 
             <div className='flex gap-4 flex-wrap items-center justify-center w-full'>
                 <Button
-                    className='text-xl text-[#645e5e] font-semibold'
+                    className='text-xl  text-gray-700 font-serif'
                     type='text'
                     onClick={() => {
                         setCreditsFlag(true);
@@ -102,11 +102,11 @@ const Navbar = () => {
                             <WalletOutlined width={20} />
                         </div>
                     ) : (
-                        'Credits'
+                        'CREDITS'
                     )}
                 </Button>
                 <Button
-                    className='text-xl text-[#645e5e] font-semibold'
+                    className='text-xl text-gray-700 font-serif'
                     type='text'
                     onClick={() => {
                         setHelpFlag(true);
@@ -117,11 +117,11 @@ const Navbar = () => {
                             <QuestionCircleOutlined width={20} />
                         </div>
                     ) : (
-                        'Help'
+                        'HELP'
                     )}
                 </Button>
                 <Button
-                    className='text-xl text-[#645e5e] font-semibold'
+                    className='text-xl text-gray-700 font-serif'
                     type='text'
                     onClick={() => {
                         setPlansFlag(true);
@@ -132,11 +132,11 @@ const Navbar = () => {
                             <CrownOutlined width={20} />
                         </div>
                     ) : (
-                        'Plans'
+                        'PLANS'
                     )}
                 </Button>
                 <Button
-                    className='text-xl text-[#645e5e] font-semibold'
+                    className='text-xl text-gray-700 font-serif'
                     type='text'
                     onClick={() => {
                         setSettingsFlag(true);
@@ -147,7 +147,7 @@ const Navbar = () => {
                             <SettingOutlined width={20} />
                         </div>
                     ) : (
-                        'Settings'
+                        'SETTINGS'
                     )}
                 </Button>
             </div>
