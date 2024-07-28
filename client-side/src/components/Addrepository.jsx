@@ -4,59 +4,27 @@ import colors from './color';
 import backgroundc1 from '../media/backgroundc1.jpg';
 import backgroundc2 from '../media/backgroundc2.jpg';
 import background4 from '../media/background4.png';
-
+import Banner from './3dslider/Banner';
 const Addrepository = () => {
     return (
         <div className='overflow-auto w-full  h-screen'>
-            <div className={`w-full h-[50%] bg-${colors.primary}  `}>
-                <div className='p-4  flex items-center  '>
-                    <p className={`font-serif text-2xl text-white `}>
-                        DATA DOC{' '}
-                    </p>
-                    <Button
-                        type='text'
-                        size='large'
-                        className={`ml-auto text-xl   px-16  bg-white  text-${colors.primary}`}
-                    >
-                        Sign Up
-                    </Button>
-                </div>
-                <div className='flex items-center justify-center  w-full h-[90%]  '>
-                    <div className='mt-16 flex flex-col items-center justify-center w-full text-white '>
-                        <h1 className='text-5xl font-serif  mb-4'>
-                            WELCOME TO DATA DOC
-                        </h1>
-                        <p className='text-xl font-serif mb-4'>
-                            EXPLORE THE BEST WAY TO TALK TO YOUR DATA
-                        </p>
-                        <div className='flex flex-wrap items-center justify-center gap-4 my-16'>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                PDF
-                            </button>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                DOCX
-                            </button>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                SQLite
-                            </button>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                PostgreSQL
-                            </button>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                DB
-                            </button>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                TXT
-                            </button>
-                            <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300'>
-                                MySQL
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div className='p-4  flex items-center bg-gray-100  '>
+                <p className={`font-serif text-2xl  text-${colors.primary}`}>
+                    DATA DOC{' '}
+                </p>
+                <Button
+                    type='text'
+                    size='large'
+                    className={`ml-auto text-xl   px-16  bg-${colors.primary}  text-white `}
+                >
+                    Sign Up
+                </Button>
+            </div>
+            <div className='flex items-center justify-center w-full h-full '>
+                <Banner />
             </div>
 
-            <div className='flex items-center justify-center w-full h-full'>
+            <div className='flex flex-wrap items-center justify-center w-full h-full'>
                 <img
                     src={background4}
                     alt='Background Image'
@@ -66,6 +34,36 @@ const Addrepository = () => {
                         objectFit: 'cover',
                     }}
                 />
+                <div className='my-16'>
+                    <p
+                        className={`flex w-full items-center justify-center text-2xl font-serif mb-4 text-${colors.primary}`}
+                    >
+                        SUPPORTED TYPES
+                    </p>
+                    <div className='flex flex-wrap items-center justify-center gap-4 '>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            PDF
+                        </button>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            DOCX
+                        </button>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            SQLite
+                        </button>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            PostgreSQL
+                        </button>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            DB
+                        </button>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            TXT
+                        </button>
+                        <button className='bg-white text-gray-800 rounded-full px-4 py-2 border border-gray-300 hover:scale-125 transition-transform duration-150'>
+                            MySQL
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <footer className={`bg-${colors.primary} px-4 text-white py-4`}>
