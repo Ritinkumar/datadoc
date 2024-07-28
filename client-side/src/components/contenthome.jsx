@@ -17,7 +17,7 @@ const Contenthome = () => {
     const features = [
         {
             icon: <FolderAddFilled style={{ fontSize: '24px' }} />,
-            text: 'Click on Add new folder from Sidebar',
+            text: 'Click on Add new folder from Sidebar to create a new folder',
         },
         {
             icon: <QuestionCircleOutlined style={{ fontSize: '24px' }} />,
