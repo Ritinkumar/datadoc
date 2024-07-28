@@ -13,6 +13,8 @@ import axios from 'axios';
 import { getIpAddress } from './NetworkUtils';
 import colors from './color';
 
+import { useNavigate } from 'react-router-dom';
+
 const LoginAndSignup = () => {
     const { setIsUserLoggedIn } = useGlobalDispatch();
     const [isSignUp, setIsSignUp] = useState(false);
@@ -28,6 +30,7 @@ const LoginAndSignup = () => {
     const validateAlreadyLoggedIn = (credentials) => {
         return true;
     };
+    const navigate = useNavigate();
 
     useEffect(() => {
         const alreadyLoggedInCredentials = localStorage.getItem('ddLoginMail');
@@ -141,6 +144,9 @@ const LoginAndSignup = () => {
                         src={logo}
                         alt='Logo'
                         className={`w-3/5 max-w-xs  mt-12 m-4`}
+                        onClick={() => {
+                            navigate('/');
+                        }}
                     />
                     {!verifyOtp ? (
                         <>

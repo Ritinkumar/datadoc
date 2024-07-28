@@ -7,7 +7,7 @@ import background4 from '../media/background4.png';
 import Banner from './3dslider/Banner';
 import { useNavigate } from 'react-router-dom';
 
-const Addrepository = () => {
+const Homepage = () => {
     const navigate = useNavigate();
     return (
         <div className='overflow-auto w-full  h-screen'>
@@ -20,7 +20,7 @@ const Addrepository = () => {
                     size='large'
                     className={`ml-auto      bg-${colors.primary}  text-white `}
                     onClick={() => {
-                        navigate('app');
+                        navigate('/app');
                     }}
                 >
                     Log In / Sign Up
@@ -96,4 +96,4 @@ const Addrepository = () => {
     );
 };
 
-export default Addrepository;
+export default Homepage;
