@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Input from 'antd/es/input/Input';
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import logo from '../media/logo.png';
-import background from '../media/background.jpg';
+import background from '../media/background3.png';
 import Alert from 'antd/es/alert/Alert';
 import axios from 'axios';
 import { getIpAddress } from './NetworkUtils';
