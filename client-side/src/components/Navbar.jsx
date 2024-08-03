@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'antd';
+import { Badge, Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCrown, faUser } from '@fortawesome/free-solid-svg-icons';
 import Settings from './Settings';
 
 import Help from './Help';
 import Plans from './Plans';
 import Credits from './Credits';
+import Notifications from './Notifications';
 import { Dropdown, Space, Menu } from 'antd';
 import { faSignOutAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -17,6 +18,7 @@ import {
     WalletOutlined,
     CrownOutlined,
     QuestionCircleOutlined,
+    BellOutlined,
 } from '@ant-design/icons';
 
 import { useGlobalState, useGlobalDispatch } from '../Globalstates';
@@ -27,6 +29,7 @@ const Navbar = () => {
     const [supportFlag, setHelpFlag] = useState(false);
     const [plansFlag, setPlansFlag] = useState(false);
     const [creditsFlag, setCreditsFlag] = useState(false);
+    const [notificationFlag, setNotificationFlag] = useState(false);
 
     const { isSmallScreen, isSmallScreenExtraSmall, isUserLoggedIn } =
         useGlobalState();
@@ -63,6 +66,21 @@ const Navbar = () => {
             ),
         },
         {
+            key: 'Upgrade',
+            label: (
+                <div
+                    onClick={() => {
+                        setPlansFlag(true);
+                    }}
+                >
+                    <Button type='text' className='w-full text-[#645e5e]'>
+                        <FontAwesomeIcon icon={faCrown} />
+                        Upgrade
+                    </Button>
+                </div>
+            ),
+        },
+        {
             key: 'logout',
             label: (
                 <div className='w-full'>
@@ -88,6 +106,11 @@ const Navbar = () => {
             {supportFlag && <Help setHelpFlag={setHelpFlag}></Help>}
             {plansFlag && <Plans setPlansFlag={setPlansFlag}></Plans>}
             {creditsFlag && <Credits setCreditsFlag={setCreditsFlag}></Credits>}
+            {notificationFlag && (
+                <Notifications
+                    setNotificationFlag={setNotificationFlag}
+                ></Notifications>
+            )}
 
             <div className='flex gap-4 flex-wrap items-center justify-center w-full'>
                 <Button
@@ -120,21 +143,30 @@ const Navbar = () => {
                         'HELP'
                     )}
                 </Button>
+
                 <Button
                     className='text-xl text-gray-700 font-serif'
                     type='text'
                     onClick={() => {
-                        setPlansFlag(true);
+                        setNotificationFlag(true);
                     }}
                 >
-                    {isSmallScreen ? (
-                        <div className='flex items-center justify-center  my-1  '>
-                            <CrownOutlined width={20} />
-                        </div>
-                    ) : (
-                        'PLANS'
-                    )}
+                    {' '}
+                    <Badge
+                        dot={true}
+                        size='large'
+                        className='text-xl text-gray-700 font-serif'
+                    >
+                        {isSmallScreen ? (
+                            <div className='flex items-center justify-center  my-1  '>
+                                <BellOutlined width={20} />
+                            </div>
+                        ) : (
+                            'ALERTS'
+                        )}
+                    </Badge>
                 </Button>
+
                 <Button
                     className='text-xl text-gray-700 font-serif'
                     type='text'

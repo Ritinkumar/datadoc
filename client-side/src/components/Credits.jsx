@@ -11,6 +11,7 @@ import {
     SearchOutlined,
     PlusOutlined,
     MinusOutlined,
+    CloseOutlined,
 } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import Wallet from './Wallet';
@@ -444,11 +445,12 @@ const Credits = ({ setCreditsFlag }) => {
                         : 'h-[80%] px-8 w-[95%] max-w-[500px] '
                 } flex flex-col items-center justify-center  overflow-auto bg-white rounded-xl `}
             >
-                <FontAwesomeIcon
-                    icon={faDeleteLeft}
-                    className='absolute top-4 right-4 text-red-500 cursor-pointer w-8 h-8'
-                    title='back'
-                    onClick={() => setCreditsFlag(false)}
+                <CloseOutlined
+                    title='Cancel'
+                    className=' w-8 h-8  absolute top-4 right-4  rounded-full items-center justify-center text-red-800 text-xl  font-bold  bg-gray-100 hover:bg-gray-200   hover:scale-110  '
+                    onClick={() => {
+                        setCreditsFlag(false);
+                    }}
                 />
 
                 <div className={` w-full  ${onMobile ? 'px-4' : ''} `}>

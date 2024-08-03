@@ -6,6 +6,7 @@ import Faq from './Faq';
 import Contactus from './Contactus';
 import StickyBox from 'react-sticky-box';
 import { Tabs } from 'antd';
+import { CloseOutlined } from '@ant-design/icons';
 
 const Help = ({ setHelpFlag }) => {
     const [onMobile, setOnMobile] = useState(false);
@@ -51,10 +52,9 @@ const Help = ({ setHelpFlag }) => {
                     onMobile ? 'h-[90%] px-4' : 'h-[80%] px-8 '
                 }   max-w-[400px] flex flex-col items-center justify-center overflow-auto bg-white rounded-xl `}
             >
-                <FontAwesomeIcon
-                    icon={faDeleteLeft}
-                    className='absolute top-4 right-4 text-red-500 cursor-pointer w-8 h-8 '
-                    title='back'
+                <CloseOutlined
+                    title='Cancel'
+                    className=' w-8 h-8  absolute top-4 right-4  rounded-full items-center justify-center text-red-800 text-xl  font-bold  bg-gray-100 hover:bg-gray-200   hover:scale-110  '
                     onClick={() => {
                         setHelpFlag(false);
                     }}

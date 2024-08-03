@@ -109,6 +109,9 @@ const Maincontent = () => {
                         {!showBoth && (
                             <FloatButton
                                 className='fixed bottom-32 right-4  '
+                                style={{
+                                    zIndex: 5, // Optional: Ensure it appears above other content
+                                }}
                                 icon={
                                     showChat ? (
                                         <FileTextOutlined className='text-gray-600' />

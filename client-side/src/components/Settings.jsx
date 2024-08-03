@@ -1,4 +1,8 @@
-import { DeploymentUnitOutlined, UserOutlined } from '@ant-design/icons';
+import {
+    CloseOutlined,
+    DeploymentUnitOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -126,10 +130,15 @@ const Settings = ({ setSettingsFlag }) => {
                     onMobile ? 'h-[90%]' : 'h-[80%] px-8 '
                 }   max-w-[400px] flex flex-col items-center justify-center overflow-auto bg-white rounded-xl `}
             >
-                <FontAwesomeIcon
+                {/* <FontAwesomeIcon
                     icon={faDeleteLeft}
                     className='absolute top-4 right-4 text-red-500 cursor-pointer w-8 h-8 '
                     title='back'
+                    onClick={() => {}}
+                /> */}
+                <CloseOutlined
+                    title='Cancel'
+                    className=' w-8 h-8  absolute top-4 right-4  rounded-full items-center justify-center text-red-800 text-xl  font-bold  bg-gray-100 hover:bg-gray-200   hover:scale-110  '
                     onClick={() => {
                         setSettingsFlag(false);
                     }}

@@ -91,24 +91,6 @@ const Main = () => {
                     )}
                 </Layout>
             </Layout>
-
-            <FloatButton
-                className={
-                    onMobile
-                        ? 'fixed bottom-16 right-4  '
-                        : 'fixed bottom-48 right-4  '
-                }
-                icon={
-                    true ? (
-                        <BellOutlined className='text-gray-600' />
-                    ) : (
-                        <MessageOutlined className='text-gray-600  ' />
-                    )
-                }
-                onClick={() => {
-                    message.info('here notifications will appear');
-                }}
-            />
         </div>
     );
 };

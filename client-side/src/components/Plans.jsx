@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card, message, Space } from 'antd';
-import { BankOutlined, CrownOutlined, ExportOutlined } from '@ant-design/icons';
+import {
+    BankOutlined,
+    CloseCircleOutlined,
+    CloseOutlined,
+    CrownOutlined,
+    ExportOutlined,
+} from '@ant-design/icons';
 import colors from './color';
 const Plans = ({ setPlansFlag }) => {
     const [onMobile, setOnMobile] = useState(false);
@@ -23,14 +29,14 @@ const Plans = ({ setPlansFlag }) => {
                     onMobile ? 'h-[90%]' : 'h-[80%]'
                 }   max-w-[400px] flex flex-col items-center justify-center overflow-auto bg-white rounded-xl`}
             >
-                <FontAwesomeIcon
-                    icon={faDeleteLeft}
-                    className='absolute top-4 right-4 text-red-500 cursor-pointer w-8 h-8 '
-                    title='back'
+                <CloseOutlined
+                    title='Cancel'
+                    className=' w-8 h-8  absolute top-4 right-4  rounded-full items-center justify-center text-red-800 text-xl  font-bold  bg-gray-100 hover:bg-gray-200   hover:scale-110  '
                     onClick={() => {
                         setPlansFlag(false);
                     }}
                 />
+
                 <div className=' h-[90%] '>
                     <Space direction='vertical' size={16}>
                         <Card

@@ -9,6 +9,7 @@ import Sqlliterepo from './Sqlliterepo';
 import Postgressrepo from './Postgreerepo';
 import Mysqlrepo from './Mysqlrepo';
 import colors from './color';
+import { CloseOutlined } from '@ant-design/icons';
 
 const Addrepositorymain = ({ setAddRepoFlag }) => {
     const items = [
@@ -71,10 +72,9 @@ const Addrepositorymain = ({ setAddRepoFlag }) => {
                 } h-fit bg-white rounded-xl max-w-lg max-h-[90%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-50 
             `}
             >
-                <FontAwesomeIcon
-                    icon={faDeleteLeft}
-                    className='absolute top-4 right-4 text-red-500 cursor-pointer w-8 h-8 '
-                    title='back'
+                <CloseOutlined
+                    title='Cancel'
+                    className=' w-8 h-8  absolute top-4 right-4  rounded-full items-center justify-center text-red-800 text-xl  font-bold  bg-gray-100 hover:bg-gray-200   hover:scale-110  '
                     onClick={() => {
                         setAddRepoFlag(false);
                     }}
