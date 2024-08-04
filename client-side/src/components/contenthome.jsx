@@ -34,7 +34,7 @@ const Contenthome = () => {
     ];
 
     return (
-        <div className='flex flex-col items-center justify-center  h-full  w-full '>
+        <div className='flex flex-col items-center justify-center  h-full  w-full overflow-auto  '>
             {/* <div className=' mb-8'>
                 <GlobalOutlined style={{ fontSize: '48px' }} />
             </div> */}

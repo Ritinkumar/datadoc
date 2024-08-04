@@ -59,7 +59,7 @@ const Main = () => {
                 </Sider>
 
                 <Layout className='h-full'>
-                    <Header className='bg-white p-0 h-[8%] '>
+                    <Header className='bg-white p-0 h-[8%] min-h-[44px] '>
                         <div className='flex '>
                             <Button
                                 type='text'
