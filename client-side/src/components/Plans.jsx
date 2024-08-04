@@ -37,7 +37,7 @@ const Plans = ({ setPlansFlag }) => {
                     }}
                 />
 
-                <div className=' h-[90%] '>
+                <div className=' flex overflow-auto  h-[85%]  px-4'>
                     <Space direction='vertical' size={16}>
                         <Card
                             className='shadow-2xl '

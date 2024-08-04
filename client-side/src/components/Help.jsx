@@ -64,7 +64,7 @@ const Help = ({ setHelpFlag }) => {
                     renderTabBar={renderTabBar}
                     items={items}
                     size='small'
-                    className='flex  rounded-xl  text-purple-600 w-full h-full  mt-12  '
+                    className='flex  rounded-xl  text-purple-600 w-full h-full    mt-12  '
                     tabBarGutter={30}
                     tabBarStyle={{ color: '#fc03e3' }}
                 />

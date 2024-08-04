@@ -13,7 +13,7 @@ const Contactus = () => {
     };
 
     return (
-        <div className='w-full h-[580px] max-h-[580px] overflow-auto bg-white flex flex-col items-center justify-center rounded-xl max-w-lg'>
+        <div className='w-full pt-4 h-full  max-h-[580px] overflow-auto bg-white flex flex-col items-center justify-center rounded-xl max-w-lg'>
             <Form
                 className='w-full'
                 form={form}

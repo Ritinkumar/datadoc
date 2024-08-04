@@ -143,135 +143,141 @@ const Settings = ({ setSettingsFlag }) => {
                         setSettingsFlag(false);
                     }}
                 />
-                <div className='flex flex-col mb-4  '>
-                    <text className='text-base mb-1 '>
-                        Select chat llm model :
-                    </text>
-                    <Dropdown.Button
-                        className='flex items-start '
-                        overlay={menu_chat_model}
-                        placement={onMobile ? 'bottomLeft' : 'bottom'}
-                        icon={
-                            <DeploymentUnitOutlined className='text-gray-600' />
-                        }
-                        arrow={true}
-                    >
-                        <p className='min-w-[250px]  flex text-bold text-gray-700  '>
-                            {chatModel}
-                        </p>
-                    </Dropdown.Button>
-                </div>
-                <div className='flex flex-col mb-4 '>
-                    <text className='text-base mb-1 '>
-                        Select embeddings llm model :
-                    </text>
-                    <Dropdown.Button
-                        className='flex items-start '
-                        overlay={menu_embedding_model}
-                        placement={onMobile ? 'bottomLeft' : 'bottom'}
-                        icon={
-                            <DeploymentUnitOutlined className='text-gray-600' />
-                        }
-                        arrow={true}
-                    >
-                        <p className='min-w-[250px]   flex text-bold text-gray-700  '>
-                            {embeddingModel}
-                        </p>
-                    </Dropdown.Button>
-                </div>
-                <div className='min-w-[318px]  h-fit p-0 mb-4 '>
-                    <p className='text-base mb-1  p-0 m-0'>
-                        Select temperature value :
-                    </p>
-                    <ConfigProvider
-                        theme={{
-                            components: {
-                                Slider: {
-                                    handleColor: '#57534e',
-                                    handleActiveColor: '#57534e',
-                                    handleSize: 4,
-                                    handleSizeHover: 6,
-                                },
-                            },
-                        }}
-                    >
-                        <Slider
-                            className='mt-0 '
-                            min={0}
-                            max={100}
-                            value={temperatureValue}
-                            onChange={(e) => {
-                                setTemperatureValue(e);
-                            }}
-                            trackStyle={{ backgroundColor: '#57534e' }}
-                            railStyle={{ backgroundColor: '#d9d2d8' }}
-                        />
-                    </ConfigProvider>
-                </div>
-
-                <div className='min-w-[318px]  h-fit p-0 mb-4 '>
-                    <p className='text-base mb-1  p-0 m-0'>
-                        Select number of references :
-                    </p>
-                    <ConfigProvider
-                        theme={{
-                            components: {
-                                Slider: {
-                                    handleColor: '#57534e',
-                                    handleActiveColor: '#57534e',
-                                    handleSize: 4,
-                                    handleSizeHover: 6,
-                                },
-                            },
-                        }}
-                    >
-                        <Slider
-                            className='mt-0 '
-                            min={3}
-                            max={10}
-                            value={referenceCount}
-                            onChange={(e) => {
-                                setReferenceCount(e);
-                            }}
-                            trackStyle={{ backgroundColor: '#57534e' }}
-                            railStyle={{ backgroundColor: '#d9d2d8' }}
-                        />
-                    </ConfigProvider>
-                </div>
-                <div className='min-w-[318px]   h-fit  mb-4 '>
-                    <p className='text-base mb-1  p-0 m-0'>
-                        Select your answer type :
-                    </p>
-                    <div className='border border-gray-300 '>
-                        <Radio.Group
-                            onChange={(e) => {
-                                setAnswerType(e.target.value);
-                            }}
-                            value={answerType}
-                            className='mb-4 mt-4 mx-4'
+                <div className=' h-[90%] overflow-auto   flex flex-col  items-center justify-center '>
+                    <div className='flex flex-col mb-4  '>
+                        <text className='text-base mb-1 '>
+                            Select chat llm model :
+                        </text>
+                        <Dropdown.Button
+                            className='flex items-start '
+                            overlay={menu_chat_model}
+                            placement={onMobile ? 'bottomLeft' : 'bottom'}
+                            icon={
+                                <DeploymentUnitOutlined className='text-gray-600' />
+                            }
+                            arrow={true}
                         >
-                            <Space direction='vertical'>
-                                <Radio value={1}>Summarized Answer</Radio>
-                                <Radio value={2}>Detailed Explanation</Radio>
-                                <Radio value={3}>Direct Answer</Radio>
-                                <Radio value={4}>Step-by-Step Solution</Radio>
-                            </Space>
-                        </Radio.Group>
+                            <p className='min-w-[250px]  flex text-bold text-gray-700  '>
+                                {chatModel}
+                            </p>
+                        </Dropdown.Button>
                     </div>
-                </div>
+                    <div className='flex flex-col mb-4 '>
+                        <text className='text-base mb-1 '>
+                            Select embeddings llm model :
+                        </text>
+                        <Dropdown.Button
+                            className='flex items-start '
+                            overlay={menu_embedding_model}
+                            placement={onMobile ? 'bottomLeft' : 'bottom'}
+                            icon={
+                                <DeploymentUnitOutlined className='text-gray-600' />
+                            }
+                            arrow={true}
+                        >
+                            <p className='min-w-[250px]   flex text-bold text-gray-700  '>
+                                {embeddingModel}
+                            </p>
+                        </Dropdown.Button>
+                    </div>
+                    <div className='min-w-[318px]  h-fit p-0 mb-4 '>
+                        <p className='text-base mb-1  p-0 m-0'>
+                            Select temperature value :
+                        </p>
+                        <ConfigProvider
+                            theme={{
+                                components: {
+                                    Slider: {
+                                        handleColor: '#57534e',
+                                        handleActiveColor: '#57534e',
+                                        handleSize: 4,
+                                        handleSizeHover: 6,
+                                    },
+                                },
+                            }}
+                        >
+                            <Slider
+                                className='mt-0 '
+                                min={0}
+                                max={100}
+                                value={temperatureValue}
+                                onChange={(e) => {
+                                    setTemperatureValue(e);
+                                }}
+                                trackStyle={{ backgroundColor: '#57534e' }}
+                                railStyle={{ backgroundColor: '#d9d2d8' }}
+                            />
+                        </ConfigProvider>
+                    </div>
 
-                <Button
-                    type='text'
-                    size='large'
-                    className={`text-xl  border border-gray-200    bg-${
-                        colors.primary
-                    } text-white  ${onMobile ? 'w-[90%]' : 'my-4 w-full'}`}
-                    onClick={() => {
-                        message.success('New changes have been applied ');
-                    }}
-                >
-                    Apply
-                </Button>
+                    <div className='min-w-[318px]  h-fit p-0 mb-4 '>
+                        <p className='text-base mb-1  p-0 m-0'>
+                            Select number of references :
+                        </p>
+                        <ConfigProvider
+                            theme={{
+                                components: {
+                                    Slider: {
+                                        handleColor: '#57534e',
+                                        handleActiveColor: '#57534e',
+                                        handleSize: 4,
+                                        handleSizeHover: 6,
+                                    },
+                                },
+                            }}
+                        >
+                            <Slider
+                                className='mt-0 '
+                                min={3}
+                                max={10}
+                                value={referenceCount}
+                                onChange={(e) => {
+                                    setReferenceCount(e);
+                                }}
+                                trackStyle={{ backgroundColor: '#57534e' }}
+                                railStyle={{ backgroundColor: '#d9d2d8' }}
+                            />
+                        </ConfigProvider>
+                    </div>
+                    <div className='min-w-[318px]   h-fit  mb-4 '>
+                        <p className='text-base mb-1  p-0 m-0'>
+                            Select your answer type :
+                        </p>
+                        <div className='border border-gray-300 '>
+                            <Radio.Group
+                                onChange={(e) => {
+                                    setAnswerType(e.target.value);
+                                }}
+                                value={answerType}
+                                className='mb-4 mt-4 mx-4'
+                            >
+                                <Space direction='vertical'>
+                                    <Radio value={1}>Summarized Answer</Radio>
+                                    <Radio value={2}>
+                                        Detailed Explanation
+                                    </Radio>
+                                    <Radio value={3}>Direct Answer</Radio>
+                                    <Radio value={4}>
+                                        Step-by-Step Solution
+                                    </Radio>
+                                </Space>
+                            </Radio.Group>
+                        </div>
+                    </div>
+
+                    <Button
+                        type='text'
+                        size='large'
+                        className={`text-xl  border border-gray-200    bg-${
+                            colors.primary
+                        } text-white  ${onMobile ? 'w-full ' : 'my-4 w-full'}`}
+                        onClick={() => {
+                            message.success('New changes have been applied ');
+                        }}
+                    >
+                        Apply
+                    </Button>
+                </div>
             </div>
         </div>
     );

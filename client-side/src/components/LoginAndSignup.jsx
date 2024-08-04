@@ -139,7 +139,7 @@ const LoginAndSignup = () => {
             )}
 
             <div className='fixed z-10 flex items-center justify-center w-full h-full bg-white bg-opacity-50 '>
-                <div className='fixed w-[70%] h-fit max-w-sm flex flex-col bg-white items-center justify-center rounded-xl border border-gray-300'>
+                <div className='fixed w-[70%] h-fit max-w-sm flex flex-col bg-white items-center justify-center rounded-xl border border-gray-300 '>
                     <img
                         src={logo}
                         alt='Logo'
