@@ -46,8 +46,8 @@ const Main = () => {
     }, []);
 
     return (
-        <div>
-            <Layout className='min-h-screen '>
+        <div className='min-h-screen h-screen'>
+            <Layout className='min-h-screen h-screen'>
                 <Sider
                     trigger={null}
                     collapsible
@@ -58,8 +58,8 @@ const Main = () => {
                     <Sidebar collapsed={collapsed}></Sidebar>
                 </Sider>
 
-                <Layout>
-                    <Header className='bg-white p-0'>
+                <Layout className='h-full'>
+                    <Header className='bg-white p-0 h-[8%] '>
                         <div className='flex '>
                             <Button
                                 type='text'
@@ -83,7 +83,7 @@ const Main = () => {
                         </div>
                     </Header>
                     {!isSmallScreenExtraSmall || collapsed ? (
-                        <Content className='min-h-[280px]  rounded-lg'>
+                        <Content className='min-h-[280px] h-[92%]   rounded-lg'>
                             <Maincontent></Maincontent>
                         </Content>
                     ) : (

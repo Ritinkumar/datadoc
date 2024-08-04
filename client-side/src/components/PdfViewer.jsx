@@ -65,8 +65,8 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
         <div className='fixed inset-0 z-10 bg-black bg-opacity-50 w-full h-full min-h-[700px] overflow-auto'>
             <div
                 className={`fixed ${
-                    onMobile ? 'w-full' : 'w-[75%] px-8'
-                } pt-16 pb-8  h-fit bg-gray-100 rounded-xl  max-h-[90%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-100  `}
+                    onMobile ? 'w-full h-[90%]' : 'w-[75%] h-[90%] px-8'
+                } pt-16 pb-8   bg-gray-100 rounded-xl   top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-100  `}
             >
                 <CloseOutlined
                     title='Cancel'
@@ -75,8 +75,24 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
                         setPdfViewerMode(false);
                     }}
                 />
+                <div className='h-[94%] w-full  overflow-hidden '>
+                    <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
+                        {pdfFile && (
+                            <div
+                                className='rounded-xl'
+                                // style={{ height: '1000px', fontSize: '16px' }}
+                                style={{ height: '100%', fontSize: '16px' }}
+                            >
+                                <Viewer
+                                    fileUrl={pdfFile}
+                                    plugins={[newPlugin]}
+                                />
+                            </div>
+                        )}
+                    </Worker>
+                </div>
 
-                <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
+                {/* <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
                     {pdfFile && (
                         <div
                             className='rounded-xl'
@@ -85,7 +101,7 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
                             <Viewer fileUrl={pdfFile} plugins={[newPlugin]} />
                         </div>
                     )}
-                </Worker>
+                </Worker> */}
             </div>
         </div>
     );

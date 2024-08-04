@@ -16,15 +16,17 @@ const Sidebar = ({ collapsed }) => {
                     setAddRepoFlag={setAddRepoFlag}
                 ></Addrepositorymain>
             )}
-            <div className='flex flex-col items-center justify-start px-2 py-2 w-full h-full '>
-                <img
-                    src={logo}
-                    alt='Logo'
-                    className={`max-w-xs mx-8 mb-8 `}
-                    style={{
-                        width: '40%',
-                    }}
-                />
+            <div className='flex flex-col items-center justify-start px-2  w-full h-full '>
+                <div className=' flex mb-8 w-full h-[8%]  items-center justify-center '>
+                    <img
+                        src={logo}
+                        alt='Logo'
+                        className={`max-w-xs mx-8  `}
+                        style={{
+                            width: '40%',
+                        }}
+                    />
+                </div>
 
                 <Button
                     className='text-xl font-semibold   text-gray-600   w-full '

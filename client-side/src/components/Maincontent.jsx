@@ -48,7 +48,7 @@ const Maincontent = () => {
     return (
         <div className='w-full h-full border border-white bg-white px-2 relative'>
             {selectedRepo.foldername ? (
-                <div>
+                <div className='h-full '>
                     {showBoth && (
                         <ConfigProvider
                             theme={{
@@ -79,7 +79,7 @@ const Maincontent = () => {
                         >
                             {(showBoth || showChat) && (
                                 <Content
-                                    className={`transition-all duration-200 mr-2   rounded-xl   ${
+                                    className={`transition-all duration-200 mr-2 h-full  rounded-xl    ${
                                         !showBoth ? 'mt-8' : 'm-4 mt-0 '
                                     } `}
                                     style={{
@@ -91,7 +91,7 @@ const Maincontent = () => {
                             )}
                             {(showBoth || showPdf) && (
                                 <Content
-                                    className={`transition-all duration-200   ml-2   rounded-xl ${
+                                    className={`transition-all duration-200  h-full   ml-2    rounded-xl ${
                                         !showBoth ? 'mt-8' : 'm-4 mt-0 '
                                     }  `}
                                     style={{
@@ -100,9 +100,7 @@ const Maincontent = () => {
                                         backgroundColor: '#fff',
                                     }}
                                 >
-                                    <div>
-                                        <Chunksviewer></Chunksviewer>
-                                    </div>
+                                    <Chunksviewer></Chunksviewer>
                                 </Content>
                             )}
                         </Layout>

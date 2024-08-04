@@ -121,7 +121,7 @@ const QuestionAndAnswers = () => {
     return (
         <div className='h-full w-[98%] flex flex-col'>
             <div
-                className='flex overflow-y-auto max-h-[750px] h-[750px]'
+                className='flex overflow-y-auto h-full max-h-[100%] '
                 ref={messagesEndRef}
             >
                 <div className='w-[98%]'>

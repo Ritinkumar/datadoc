@@ -118,22 +118,25 @@ const Chunksviewer = () => {
     }, [pageNumber]);
 
     return (
-        <div>
-            <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
-                {pdfFile && (
-                    <div
-                        className='rounded-xl'
-                        style={{ height: '750px', fontSize: '16px' }}
-                    >
-                        <Viewer
-                            fileUrl={pdfFile}
-                            plugins={[newPlugin]}
-                            initialPage={pageNumber}
-                        />
-                    </div>
-                )}
-            </Worker>
-            <div className='bg-[#eeefef] border-t-0  border border-gray-400'>
+        <div className='h-full   '>
+            <div className='h-[94%] overflow-hidden '>
+                <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
+                    {pdfFile && (
+                        <div
+                            className='rounded-xl'
+                            // style={{ height: '1000px', fontSize: '16px' }}
+                            style={{ height: '100%', fontSize: '16px' }}
+                        >
+                            <Viewer
+                                fileUrl={pdfFile}
+                                plugins={[newPlugin]}
+                                initialPage={pageNumber}
+                            />
+                        </div>
+                    )}
+                </Worker>
+            </div>
+            <div className='bg-[#eeefef] h-[6%] border-t-0  border border-gray-400'>
                 <ButtonsDisplay />
             </div>
         </div>
