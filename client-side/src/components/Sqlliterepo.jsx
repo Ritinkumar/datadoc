@@ -123,7 +123,7 @@ const Sqlliterepo = ({ setAddRepoFlag }) => {
                     {files.map((file, index) => (
                         <div
                             key={index}
-                            className='flex  items-center justify-center px-4  min-w-fit'
+                            className='flex  items-center justify-center px-4  min-w-fit text-base'
                         >
                             <FileOutlined className='text-gray-500 mr-2' />
                             <span>{file.name}</span>
