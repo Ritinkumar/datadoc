@@ -1,9 +1,7 @@
 import { Button, FloatButton } from 'antd';
 import React from 'react';
 import colors from './color';
-import backgroundc1 from '../media/backgroundc1.jpg';
-import backgroundc2 from '../media/backgroundc2.jpg';
-import background4 from '../media/background4.png';
+import background4 from '../media/background.png';
 import Banner from './3dslider/Banner';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,7 +11,7 @@ const Homepage = () => {
         <div className='overflow-auto w-full  h-screen'>
             <div className='p-4  flex items-center bg-gray-100  '>
                 <p className={`font-serif text-2xl  text-${colors.primary}`}>
-                    DATA DOC{' '}
+                    DATA BOT{' '}
                 </p>
                 <Button
                     type='text'
@@ -35,6 +33,7 @@ const Homepage = () => {
                     src={background4}
                     alt='Background Image'
                     style={{
+                        minWidth: '50%',
                         maxWidth: '100%',
                         maxHeight: '100%',
                         objectFit: 'cover',

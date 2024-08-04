@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { message } from 'antd';
 import { getIpAddress } from './NetworkUtils';
+import { CloseOutlined } from '@ant-design/icons';
 
 const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
     const [pdfFile, setPdfFile] = useState(null);
@@ -67,10 +68,9 @@ const PdfViewer = ({ fileDetailsToView, setPdfViewerMode }) => {
                     onMobile ? 'w-full' : 'w-[75%] px-8'
                 } pt-16 pb-8  h-fit bg-gray-100 rounded-xl  max-h-[90%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 border border-gray-100  `}
             >
-                <FontAwesomeIcon
-                    icon={faDeleteLeft}
-                    className='absolute top-4 right-4 text-red-500 cursor-pointer w-8 h-8 '
-                    title='back'
+                <CloseOutlined
+                    title='Cancel'
+                    className=' w-8 h-8  absolute top-4 right-4  rounded-full items-center justify-center text-red-800 text-xl  font-bold  bg-gray-100 hover:bg-gray-200   hover:scale-110  '
                     onClick={() => {
                         setPdfViewerMode(false);
                     }}

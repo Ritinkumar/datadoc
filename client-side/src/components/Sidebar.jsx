@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../media/logo.png';
+import logo from '../media/logo2.png';
 import { Button } from 'antd';
 import { FolderAddFilled, FolderAddOutlined } from '@ant-design/icons';
 

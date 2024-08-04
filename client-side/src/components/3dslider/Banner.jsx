@@ -34,7 +34,7 @@ const Banner = () => {
                 </div>
             </div>
             <div className='content'>
-                <h1 data-content='DATA DOC'>DATA DOC </h1>
+                <h1 data-content='DATA BOT'>DATA BOT </h1>
                 <p
                     className='flex items-center justify-center w-full  '
                     data-content=' EXPLORE THE BEST WAY TO TALK TO YOUR DATA.'
